@@ -10,12 +10,12 @@ spring:
       connection-timeout: 30000
   jpa:
     hibernate:
-      ddl-auto: update   # Flywayに寄せるなら 'validate' 推奨
+      ddl-auto: validate
     open-in-view: false
     properties:
       hibernate.format_sql: true
   flyway:
-    enabled: false
+    enabled: true
 logging:
   level:
     org.hibernate.SQL: debug

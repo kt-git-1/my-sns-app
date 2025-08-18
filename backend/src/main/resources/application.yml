@@ -1,1 +1,20 @@
-spring.application.name=backend
+spring:
+  application:
+    name: mini-sns
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    jackson:
+        time-zone: Asia/Tokyo
+
+server:
+  port: 8080
+
+logging:
+    level:
+      org.hibernate.SQL: info
+      org.hibernate.type.descriptor.sql.BasicBinder: warn

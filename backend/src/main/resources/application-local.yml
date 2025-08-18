@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:sns_db}
+    username: ${POSTGRES_USER:sns_user}
+    password: ${POSTGRES_PASSWORD:sns_pass}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update   # Flywayに寄せるなら 'validate' 推奨
+    open-in-view: false
+    properties:
+      hibernate.format_sql: true
+  flyway:
+    enabled: false
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework: info
